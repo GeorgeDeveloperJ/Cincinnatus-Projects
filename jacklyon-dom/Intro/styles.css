@@ -7,3 +7,7 @@ h1{
     background-color: black;
     color: antiquewhite
 }
+.list{
+    text-align: center;
+    padding: 5px;
+}
