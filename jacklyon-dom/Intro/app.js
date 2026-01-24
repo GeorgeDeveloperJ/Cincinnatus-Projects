@@ -1,6 +1,5 @@
 let elemento;
-elemento = document
-elemento = document.body
-elemento = document.head
-elemento = document.title
+elemento = document.styleSheets
+elemento = document.
+elemento = document.links
 console.log(elemento)
