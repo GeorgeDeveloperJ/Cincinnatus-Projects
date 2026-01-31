@@ -1,7 +1,7 @@
-const entrada = document.getElementById('input')
-function evento(e) {
-    console.log("Presionaste la tecla " + e.key)
-}
-const evento_anonimo = (e) => {console.log(e)} //Anonymous function for getting events
+const formulario = document.getElementById('form');
 
-entrada.addEventListener('keydown', evento)
+formulario.addEventListener('submit', function(e){
+    e.preventDefault();
+    let mail = document.getElementById('email-form').value;
+    console.log(mail);
+});
