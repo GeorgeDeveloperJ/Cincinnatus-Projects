@@ -1,7 +1,11 @@
 const formulario = document.getElementById('form');
+const checkbox = document.getElementById('activador')
 
-formulario.addEventListener('submit', function(e){
-    e.preventDefault();
-    let mail = document.getElementById('email-form').value;
-    console.log(mail);
-});
+checkbox.addEventListener('change', e =>{
+    let status = e.target.checked
+    if (status) {
+        console.log("Su solicitud aceptada")
+    } else {
+        console.log("Active la Solicitud")
+    }
+})

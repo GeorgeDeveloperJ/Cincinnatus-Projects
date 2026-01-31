@@ -24,6 +24,11 @@ h1 {
     margin: 10px;
 }
 
+.container label{
+    color: whitesmoke;
+    font-size: 1.3rem;
+}
+
 #form {
     display: flex;           
     width: 80%;              
