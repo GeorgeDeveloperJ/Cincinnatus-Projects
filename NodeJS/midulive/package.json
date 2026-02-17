@@ -1,0 +1,29 @@
+{
+  "name": "node-course-midulive",
+  "version": "1.0.0",
+  "description": "aprendiendo node, core modules y algunos proyectos",
+  "keywords": [
+    "curso",
+    "node",
+    "nodejs",
+    "midudev"
+  ],
+  "homepage": "https://github.com/GeorgeDeveloperJ/Cincinnatus-Projects#readme",
+  "bugs": {
+    "url": "https://github.com/GeorgeDeveloperJ/Cincinnatus-Projects/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeorgeDeveloperJ/Cincinnatus-Projects.git"
+  },
+  "license": "ISC",
+  "author": "George Anthony Santana Rosario - GeorgeDevJ",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  }
+}
