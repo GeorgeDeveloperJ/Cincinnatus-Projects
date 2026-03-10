@@ -28,13 +28,15 @@ if (!fs.existsSync('./config.json')) {
       }
     ])
     .then((answers) => {
-      
+      fs.writeFileSync('./config.json', (answers) => {
+        
+      })
     })
     .catch((error) => {
       if (error.isTtyError) {
-        // Prompt couldn't be rendered in the current environment
+        console.error("Prompt couldn't be rendered in the current environment")
       } else {
-        // Something else went wrong
+        console.error("Something went wrong", error)
       }
     });
     
