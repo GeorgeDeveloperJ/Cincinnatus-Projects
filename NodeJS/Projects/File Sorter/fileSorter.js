@@ -29,6 +29,20 @@ console.log(`Sorting ${dir}...`);
 
 const dirContent = fs.readdirSync(dir, { withFileTypes: true })
 
+function manageRepeated(filePath) {
+  const parsed = path.parse(filePath);
+
+  let counter = 1;
+  let newPath = path.join(parsed.dir, `${parsed.name}(${counter})${parsed.ext}`);
+
+  while (fs.existsSync(newPath)) {
+    counter++;
+    newPath = path.join(parsed.dir, `${parsed.name}(${counter})${parsed.ext}`);
+  }
+
+  return newPath;
+}
+
 for (let i = 0; i < dirContent.length; i++) {
   let item = dirContent[i];
 
