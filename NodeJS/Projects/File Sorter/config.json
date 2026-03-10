@@ -1,0 +1,39 @@
+{
+  ".pdf": "Documents",
+  ".docx": "Documents",
+  ".xlsx": "Documents",
+  ".txt": "Documents",
+  
+  ".mp4": "Media",
+  ".mkv": "Media",
+  ".avi": "Media",
+  ".mp3": "Media",
+  
+  ".jpg": "Images",
+  ".jpeg": "Images",
+  ".png": "Images",
+  ".svg": "Images",
+  
+  ".js": "Code",
+  ".json": "Code",
+  ".html": "Code",
+  ".css": "Code",
+  ".py": "Code",
+  ".sh": "Code",
+  
+  ".zip": "Archives",
+  ".tar.gz": "Archives",
+  ".rar": "Archives",
+  ".7z": "Archives",
+  
+  ".iso": "OS_Images",
+  ".img": "OS_Images",
+  ".rpm": "OS_Images",
+  ".deb": "OS_Images",
+  
+  ".pcap": "Security",
+  ".ovpn": "Security",
+  ".pem": "Security",
+  
+  ".torrent": "Torrents"
+}
