@@ -3,6 +3,7 @@
   ".docx": "Documents",
   ".xlsx": "Documents",
   ".txt": "Documents",
+  ".csv": "Documents",
   
   ".mp4": "Media",
   ".mkv": "Media",

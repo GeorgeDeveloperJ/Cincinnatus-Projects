@@ -33,19 +33,28 @@ for (let i = 0; i < dirContent.length; i++) {
   let item = dirContent[i];
 
   if (item.isFile()) {
-    const fileName = item.name;
-    const extension = path.extname(fileName);
-    const file = new File(path.basename(fileName, extension), extension);
-    
+    const parsedFile = path.parse(item.name);
+    const file = new File(parsedFile.name, parsedFile.ext)
+
     const categoryFolder = path.join(dir, file.getCategory());
-    const originalFilePath = path.join(dir, fileName);
-    const newFilePath = path.join(categoryFolder, fileName);
+    const originalFilePath = path.join(dir, item.name);
+    let newFilePath = path.join(categoryFolder, item.name );
 
     const existsDir = fs.existsSync(categoryFolder);
 
     if (!existsDir) {
       fs.mkdirSync(categoryFolder);
+    }
+
+    const existsFile = fs.existsSync(newFilePath);
+    if (existsFile) {
+      newFilePath = manageRepeated(newFilePath);
     } 
-    fs.renameSync(originalFilePath, newFilePath);
+
+    fs.renameSync(originalFilePath, newFilePath); 
+  } else {
+    console.log(`Skipped folder ${item.name}`)
   }
 }
+
+console.log(`${dir} sorted succesfully`);
