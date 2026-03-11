@@ -1,4 +1,8 @@
 {
+  "type": "module",
+  "scripts": {
+    "test:wizard": "rm config.json && node logCleaner.js"
+  },
   "dependencies": {
     "inquirer": "^13.3.0"
   }
