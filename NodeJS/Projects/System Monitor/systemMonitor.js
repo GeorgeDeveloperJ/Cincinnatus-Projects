@@ -1,4 +1,5 @@
 import os from 'node:os';
+import fs from 'node:fs';
 import axios from 'axios';
 import 'dotenv/config';
 
@@ -13,8 +14,18 @@ const ALERT_THRESHOLD = process.env.ALERT_THRESHOLD || 90;
 const CHECK_INTERVAL_MS = process.env.CHECK_INTERVAL_MS  || 1000 * 60 * 5;
 
 function estimatePercRam() {
-  const totalRam = os.totalmem();
-  const freeRam = os.freemem();
+  const totalRam = os.totalmem() / 1024; // Bytes -> KyloBytes
+  let freeRam = os.freemem() / 1024; // Bytes -> KB
+  if (os.platform() == 'linux') {
+    const memoryText = fs.readFileSync('/proc/meminfo', 'utf-8');
+    const lines = memoryText.split("\n");
+    lines.forEach(line => {
+      if (line.includes("MemAvailable:")) {        
+        let dataRam = line.trim().split(":")[1].replace("kB", ""); // remove whitespaces -> splitting and getting the 2 value -> removing kB
+        freeRam = parseInt(dataRam);
+      }
+    })
+  }
   const usedRam = totalRam - freeRam;
   const percUsedRam = usedRam / totalRam * 100;
   return percUsedRam;
