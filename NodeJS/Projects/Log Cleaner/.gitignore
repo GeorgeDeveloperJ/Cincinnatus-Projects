@@ -3,3 +3,4 @@ node_modules/
 
 #Ignore testing
 test-logs/
+config.json
