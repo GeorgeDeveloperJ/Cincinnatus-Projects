@@ -1,6 +1,7 @@
 import os from 'node:os';
 import fs from 'node:fs';
 import axios from 'axios';
+import { setTimeout as sleep } from 'node:timers/promises'; 
 import 'dotenv/config';
 
 // Check if the webhook is undefined
@@ -22,7 +23,7 @@ function estimatePercRam() {
     lines.forEach(line => {
       if (line.includes("MemAvailable:")) {        
         let dataRam = line.trim().split(":")[1].replace("kB", ""); // remove whitespaces -> splitting and getting the 2 value -> removing kB
-        freeRam = parseInt(dataRam);
+        freeRam = parseInt(dataRam); // Convert it to an number
       }
     })
   }
@@ -30,8 +31,6 @@ function estimatePercRam() {
   const percUsedRam = usedRam / totalRam * 100;
   return percUsedRam;
 }
-
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function takeSnapshot(cpus) {
   return cpus.map(cpu => {
