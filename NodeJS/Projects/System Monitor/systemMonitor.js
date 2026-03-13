@@ -2,6 +2,13 @@ import os from 'node:os';
 import axios from 'axios';
 import 'dotenv/config';
 
+// Check if the webhook is undefined
+if (!process.env.DISCORD_WEBHOOK_URL) {
+  console.error("Discord webhook url is not declared");
+  console.log("Check your env variables");
+  process.exit(1);
+}
+
 const ALERT_THRESHOLD = process.env.ALERT_THRESHOLD || 90;
 const CHECK_INTERVAL_MS = process.env.CHECK_INTERVAL_MS  || 1000 * 60 * 5;
 
