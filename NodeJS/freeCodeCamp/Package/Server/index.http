@@ -1,0 +1,8 @@
+POST http://localhost:3003/cursos/programacion 
+Content-Type: application/json
+
+{
+    id: 5,
+    titulo: "Aprende NodeJS",
+    lenguaje: "javascript"
+}

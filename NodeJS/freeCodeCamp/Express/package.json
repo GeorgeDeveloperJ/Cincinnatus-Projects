@@ -1,0 +1,15 @@
+{
+  "name": "express-server",
+  "version": "1.0.0",
+  "description": "mi primer server utilizando express",
+  "license": "ISC",
+  "author": "George Anthony Santana Rosario",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
